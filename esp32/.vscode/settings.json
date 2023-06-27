@@ -9,5 +9,10 @@
   "files.associations": {
     "freertos.h": "c",
     "esp_gap_ble_api.h": "c"
-  }
+  },
+  "cSpell.words": [
+    "GPIO",
+    "IRAM",
+    "POSEDGE"
+  ]
 }
