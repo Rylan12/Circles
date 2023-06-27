@@ -15,6 +15,9 @@
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
+// For logging
+static const char* TAG = "Circles";
+
 // Queue to handle GPIO and button press events
 static QueueHandle_t gpio_event_queue = NULL;
 static QueueHandle_t button_event_queue = NULL;
@@ -34,10 +37,12 @@ static void gpio_event(void* arg)
     for(;;) {
         if(xQueueReceive(gpio_event_queue, &io_num, portMAX_DELAY)) {
             if (ignore_presses || io_num != BUTTON_GPIO) {
+                ESP_LOGD(TAG, "Ignoring GPIO event from GPIO %lu (ignore_presses: %d)", io_num, ignore_presses);
                 continue;
             }
             ignore_presses = true;
 
+            ESP_LOGD(TAG, "Triggering button press event");
             // Send a message to the button press task
             xQueueSend(button_event_queue, &io_num, 0);
         }
@@ -49,6 +54,7 @@ static void button_press_event(void *arg) {
     uint32_t buf;
     for(;;) {
         if(xQueueReceive(button_event_queue, &buf, portMAX_DELAY)) {
+            ESP_LOGI(TAG, "Button press event triggered");
             // Turn on the LED
             gpio_set_level(LED_GPIO, 1);
 
