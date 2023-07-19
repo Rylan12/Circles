@@ -11,6 +11,10 @@
 		C353ABCA2A5C8CC5007962D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C353ABC92A5C8CC5007962D6 /* ContentView.swift */; };
 		C353ABCC2A5C8CC6007962D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C353ABCB2A5C8CC6007962D6 /* Assets.xcassets */; };
 		C353ABCF2A5C8CC6007962D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C353ABCE2A5C8CC6007962D6 /* Preview Assets.xcassets */; };
+		C3C1B3842A674181008BDC95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3C1B3832A674181008BDC95 /* GoogleService-Info.plist */; };
+		C3C1B3872A674226008BDC95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C3C1B3862A674226008BDC95 /* FirebaseAnalytics */; };
+		C3C1B3892A674226008BDC95 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C3C1B3882A674226008BDC95 /* FirebaseMessaging */; };
+		C3C1B38D2A676CE0008BDC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C1B38C2A676CE0008BDC95 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,9 @@
 		C353ABCB2A5C8CC6007962D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C353ABCE2A5C8CC6007962D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3B4A5762A5CDA83005EEDB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C3C1B3832A674181008BDC95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3C1B38C2A676CE0008BDC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C3C1B38E2A6777E2008BDC95 /* Circles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Circles.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C1B3892A674226008BDC95 /* FirebaseMessaging in Frameworks */,
+				C3C1B3872A674226008BDC95 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,10 +61,13 @@
 		C353ABC62A5C8CC5007962D6 /* Circles */ = {
 			isa = PBXGroup;
 			children = (
+				C3C1B38E2A6777E2008BDC95 /* Circles.entitlements */,
 				C3B4A5762A5CDA83005EEDB0 /* Info.plist */,
+				C3C1B38C2A676CE0008BDC95 /* AppDelegate.swift */,
 				C353ABC72A5C8CC5007962D6 /* CirclesApp.swift */,
 				C353ABC92A5C8CC5007962D6 /* ContentView.swift */,
 				C353ABCB2A5C8CC6007962D6 /* Assets.xcassets */,
+				C3C1B3832A674181008BDC95 /* GoogleService-Info.plist */,
 				C353ABCD2A5C8CC6007962D6 /* Preview Content */,
 			);
 			path = Circles;
@@ -85,6 +97,10 @@
 			dependencies = (
 			);
 			name = Circles;
+			packageProductDependencies = (
+				C3C1B3862A674226008BDC95 /* FirebaseAnalytics */,
+				C3C1B3882A674226008BDC95 /* FirebaseMessaging */,
+			);
 			productName = Circles;
 			productReference = C353ABC42A5C8CC5007962D6 /* Circles.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +129,9 @@
 				Base,
 			);
 			mainGroup = C353ABBB2A5C8CC5007962D6;
+			packageReferences = (
+				C3C1B3852A674226008BDC95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = C353ABC52A5C8CC5007962D6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +148,7 @@
 			files = (
 				C353ABCF2A5C8CC6007962D6 /* Preview Assets.xcassets in Resources */,
 				C353ABCC2A5C8CC6007962D6 /* Assets.xcassets in Resources */,
+				C3C1B3842A674181008BDC95 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C1B38D2A676CE0008BDC95 /* AppDelegate.swift in Sources */,
 				C353ABCA2A5C8CC5007962D6 /* ContentView.swift in Sources */,
 				C353ABC82A5C8CC5007962D6 /* CirclesApp.swift in Sources */,
 			);
@@ -266,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Circles/Circles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Circles/Preview Content\"";
@@ -300,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Circles/Circles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Circles/Preview Content\"";
@@ -351,6 +374,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3C1B3852A674226008BDC95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3C1B3862A674226008BDC95 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3C1B3852A674226008BDC95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C3C1B3882A674226008BDC95 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3C1B3852A674226008BDC95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C353ABBC2A5C8CC5007962D6 /* Project object */;
 }

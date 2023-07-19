@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>415685529112-ig12p6kujdl0qfl2rk5g1oh0228losuk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.415685529112-ig12p6kujdl0qfl2rk5g1oh0228losuk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-Tsm-iAMlbk1EXvaKqN9f67q5DoHBO_I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>415685529112</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.rylanpolster.Circles</string>
+	<key>PROJECT_ID</key>
+	<string>circles-e6fa2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>circles-e6fa2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:415685529112:ios:1bc5bde4a513a1397dbd6d</string>
+</dict>
+</plist>
