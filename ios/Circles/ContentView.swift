@@ -19,7 +19,7 @@ struct ContentView: View {
             Text("Hello, \(user.rawValue.capitalized)!")
                 .font(.title)
             Button("Send Message") {
-
+                FirebaseManager.sendMessage(user: user, message: message)
             }
             .buttonStyle(.borderedProminent)
             Button("Edit Message") {

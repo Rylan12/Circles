@@ -29,7 +29,7 @@ struct LoginView: View {
                 Text("Rylan").tag(User.rylan)
             }
             Button("Login") {
-                FirestoreManager.updateUserInfo(user: selectedUser, message: message)
+                FirebaseManager.updateUserInfo(user: selectedUser, message: message)
                 dismiss()
             }
             .buttonStyle(.borderedProminent)

@@ -19,7 +19,7 @@ struct EditMessageView: View {
             TextField("Message:", text: $message)
                 .textFieldStyle(.roundedBorder)
             Button("Save") {
-                FirestoreManager.updateUserInfo(user: selectedUser, message: message)
+                FirebaseManager.updateUserInfo(user: selectedUser, message: message)
                 dismiss()
             }
             .buttonStyle(.borderedProminent)
