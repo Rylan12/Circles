@@ -67,5 +67,7 @@ extension AppDelegate: MessagingDelegate {
             object: nil,
             userInfo: dataDict
         )
+        
+        FirestoreManager.fcmToken = fcmToken
     }
 }

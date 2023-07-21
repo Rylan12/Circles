@@ -15,6 +15,7 @@ enum User: String, CaseIterable, Identifiable, Codable {
 struct LoginView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var selectedUser: User
+    @Binding var message: String
     
     var body: some View {
         VStack {
@@ -28,6 +29,7 @@ struct LoginView: View {
                 Text("Rylan").tag(User.rylan)
             }
             Button("Login") {
+                FirestoreManager.updateUserInfo(user: selectedUser, message: message)
                 dismiss()
             }
             .buttonStyle(.borderedProminent)
@@ -38,6 +40,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(selectedUser: .constant(.choose))
+        LoginView(selectedUser: .constant(.choose), message: .constant("Tyler!"))
     }
 }
