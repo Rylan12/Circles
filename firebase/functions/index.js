@@ -7,13 +7,26 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-const {onRequest} = require("firebase-functions/v2/https");
+const {onCall, HttpsError} = require("firebase-functions/v2/https");
+const {getDatabase} = require("firebase-admin/database");
 const logger = require("firebase-functions/logger");
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+exports.sendMessage = onCall((request) => {
+  const username = request.data.username;
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+  if (username != "abbie" && username != "rylan") {
+    throw new HttpsError("failed-precondition", "Invalid username");
+  }
+
+  return getDatabase().ref("/messages").push({
+    text: request.data.text,
+    timestamp: Date.now(),
+    author: username,
+    target: username == "abbie" ? "rylan" : "abbie",
+  }).then(() => {
+    logger.info("New message written");
+    return;
+  }).catch((error) => {
+    throw new HttpsError("unknown", error.message, error);
+  });
+});
