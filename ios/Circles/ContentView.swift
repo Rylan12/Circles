@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("needsLogin") var needsLogin: Bool = true
+    @AppStorage("user") var user: User = .choose
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, Abbie!")
+            Text("Hello, \(user.rawValue.capitalized)!")
+            Toggle(isOn: $needsLogin) {
+                Text("Test")
+            }
+            Button("Clear Saved Information") {
+                if let bundleID = Bundle.main.bundleIdentifier {
+                    UserDefaults.standard.removePersistentDomain(forName: bundleID)
+                }
+            }
         }
         .padding()
+        .fullScreenCover(isPresented: $needsLogin) {
+            LoginView(selectedUser: $user)
+        }
     }
 }
 

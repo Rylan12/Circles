@@ -15,6 +15,7 @@
 		C3C1B3872A674226008BDC95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C3C1B3862A674226008BDC95 /* FirebaseAnalytics */; };
 		C3C1B3892A674226008BDC95 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C3C1B3882A674226008BDC95 /* FirebaseMessaging */; };
 		C3C1B38D2A676CE0008BDC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C1B38C2A676CE0008BDC95 /* AppDelegate.swift */; };
+		C3C1B3942A69C5B5008BDC95 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C1B3932A69C5B5008BDC95 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		C3C1B3832A674181008BDC95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3C1B38C2A676CE0008BDC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C1B38E2A6777E2008BDC95 /* Circles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Circles.entitlements; sourceTree = "<group>"; };
+		C3C1B3932A69C5B5008BDC95 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				C3C1B38C2A676CE0008BDC95 /* AppDelegate.swift */,
 				C353ABC72A5C8CC5007962D6 /* CirclesApp.swift */,
 				C353ABC92A5C8CC5007962D6 /* ContentView.swift */,
+				C3C1B3932A69C5B5008BDC95 /* LoginView.swift */,
 				C353ABCB2A5C8CC6007962D6 /* Assets.xcassets */,
 				C3C1B3832A674181008BDC95 /* GoogleService-Info.plist */,
 				C353ABCD2A5C8CC6007962D6 /* Preview Content */,
@@ -161,6 +164,7 @@
 			files = (
 				C3C1B38D2A676CE0008BDC95 /* AppDelegate.swift in Sources */,
 				C353ABCA2A5C8CC5007962D6 /* ContentView.swift in Sources */,
+				C3C1B3942A69C5B5008BDC95 /* LoginView.swift in Sources */,
 				C353ABC82A5C8CC5007962D6 /* CirclesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
