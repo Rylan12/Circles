@@ -11,7 +11,6 @@ struct ContentView: View {
     @AppStorage("needsLogin") var needsLogin: Bool = true
     @AppStorage("user") var user: User = .choose
     @AppStorage("message") var message: String = "Tyler!"
-    @State private var showEditMessageView: Bool = false
     
     var body: some View {
         VStack {
@@ -22,20 +21,22 @@ struct ContentView: View {
                 FirebaseManager.sendMessage(user: user, message: message)
             }
             .buttonStyle(.borderedProminent)
-            Button("Edit Message") {
-                showEditMessageView = true
-            }
+            .padding(.bottom, 10.0)
+            Text("Message:")
+            TextField("Message", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .onSubmit {
+                    FirebaseManager.updateUserInfo(user: user, message: message)
+                }
+                .submitLabel(.done)
             Spacer()
             Button("Logout") {
                 needsLogin = true
             }
         }
-        .padding()
+        .padding(.horizontal, 40.0)
         .fullScreenCover(isPresented: $needsLogin) {
             LoginView(selectedUser: $user, message: $message)
-        }
-        .fullScreenCover(isPresented: $showEditMessageView) {
-            EditMessageView(selectedUser: $user, message: $message)
         }
     }
 }
