@@ -40,6 +40,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(selectedUser: .constant(.choose), message: .constant("Tyler!"))
+        LoginView(selectedUser: .constant(.choose), message: .constant("Hello!"))
     }
 }

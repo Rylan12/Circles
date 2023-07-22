@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("needsLogin") var needsLogin: Bool = true
     @AppStorage("user") var user: User = .choose
-    @AppStorage("message") var message: String = "Tyler!"
+    @AppStorage("message") var message: String = "Hello!"
     
     @ObservedObject var messageSendHelper = MessageSendHelper()
     
