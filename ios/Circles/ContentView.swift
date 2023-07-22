@@ -12,14 +12,17 @@ struct ContentView: View {
     @AppStorage("user") var user: User = .choose
     @AppStorage("message") var message: String = "Tyler!"
     
+    @ObservedObject var messageSendHelper = MessageSendHelper()
+    
     var body: some View {
         VStack {
             Spacer()
             Text("Hello, \(user.rawValue.capitalized)!")
                 .font(.title)
             Button("Send Message") {
-                FirebaseManager.sendMessage(user: user, message: message)
+                FirebaseManager.sendMessage(user: user, message: message, messageSendHelper: messageSendHelper)
             }
+            .disabled(messageSendHelper.sending)
             .buttonStyle(.borderedProminent)
             .padding(.bottom, 10.0)
             Text("Message:")
@@ -37,6 +40,9 @@ struct ContentView: View {
         .padding(.horizontal, 40.0)
         .fullScreenCover(isPresented: $needsLogin) {
             LoginView(selectedUser: $user, message: $message)
+        }
+        .alert("Message send failure!", isPresented: $messageSendHelper.failure, actions: { }) {
+            Text(messageSendHelper.failureMessage)
         }
     }
 }
